@@ -1,28 +1,18 @@
-name: Run Cypress Tests
+name: Cypress Tests
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
+    container:
+      image: cypress/included:latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install Dependencies
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install dependencies
         run: npm install
-
-      - name: Run Cypress Tests
+        
+      - name: Cypress run
         run: npx cypress run

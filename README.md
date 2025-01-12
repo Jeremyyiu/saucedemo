@@ -56,9 +56,10 @@ The tests are structured with the following key practices:
 - Return to products: After purchase, confirm that the user is redirected to the inventory page.
 
 ## Assumptions
-- Chrome browser, screen size 1000 x 600
+- Users use an Electron browser with a screen size of 2560 x 1440
 - The standard user credentials (standard_user) are valid for login.
 - Shipping details particularly the post code are valid and in Australian format
 - The product "Sauce Labs Backpack" is always available
-- Test environment is stable
+- Product inventory and prices remain constant. 
+- The website (https://www.saucedemo.com) is stable and accessible
 - Analytics calls from events.backtrace.io are ignored to prevent interference with the test flow. 
